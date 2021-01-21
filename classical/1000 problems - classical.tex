@@ -1,0 +1,573 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{1000 solved problems in classical physics}
+\author{Aleksander Dobkowski}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Kinematics and statics}
+\subsection{Motion in one dimension}
+
+% ===================================================
+
+\paragraph{Ex 1.1}
+A car starts from rest at constant acceleration of $2\frac{m}{s^2}$. At the same instant a truck travelling with a constant speed $10\frac{m}{s}$ overtakes and passes the car.
+
+(a) How far beyond the starting point will the car overtake the truck?
+
+(b) After what  time will this happen?
+
+(c) At that instant what will be the speed of the car?
+\paragraph{Solution\\}
+(a) Motion equation for the car
+\[ v_c = \int a_c \, dt = a_ct + v_0 \]
+\[ s_c = \int v_c \, dt = \frac{a_ct^2}{2} + v_0t + s_0 \]
+
+We know that for the car $s_0 = 0$ and $v_0 = 0$, therefore we simplify the equation to:
+
+\[ s_c = \frac{a_ct^2}{2} \]
+
+Motion equation for the truck
+\[ s_t = \int v_t \, dt = v_tt + s_0 \]
+
+For the truck we treat the initial position $s_0 = 0$, therefore we simplify the equation to:
+
+\[ s_t = v_tt \]
+
+We can now compare the two equations and find the time t for which the two vehicles will meet
+
+\[ s_c = s_t \]
+
+\[ \frac{a_ct^2}{2} = v_t t \]
+\[ \frac{a_ct^2}{2} - v_tt = 0 \]
+\[ t \left( \frac{a_ct}{2} - v_t \right) = 0 \]
+
+The roots of the quadratic equation will be
+
+\[ t_1 = 0 \]
+\[ t_2 = \frac{2v_t}{a_c} \]
+
+We take interest in the second root
+
+\[ t = \frac{2v_t}{a_c} = \frac{2 \cdot 10}{2} = 10 \]
+
+We can now calculate the distance travelled by either of the vehicles in time $t = 10s$
+
+\[ s_c(10) = \frac{a_c 10^2}{2}= 100 \]
+\[ s_t(10) = v_t \cdot 10 = 100 \]
+
+(b) As per the above calculations it will happen after time $t = 10s$.
+
+(c) As per the above calculations it will be
+
+\[ v_c = \int a_c \, dt = a_ct + v_0 \]
+
+... where $v_0 = 0$, so
+\[ v_c = a_ct \]
+
+\[ v_c(10) = 2 \cdot 10 = 20 \]
+
+% ===================================================
+
+\paragraph{Ex 1.3}
+A stone is dropped from a height of 19.6m, above the ground while a second stone is simultaneously projected from the ground with sufficient velocity to enable it to ascend 19.6m. When and where the stones would meet?
+\paragraph{Solution}
+
+Motion equation for the stone dropped from a height
+
+\[ s_1 = -\frac{1}{2}gt^2 + h \]
+
+Initial velocity calculation for the stone projected upward
+
+\[ mgh = \frac{mv^2}{2} \]
+\[ v = \sqrt{2gh} \]
+
+Motion equation for the stone projected upward
+
+\[ s_2 = -\frac{1}{2}gt^2 + vt = -\frac{1}{2}gt^2 + \sqrt{2gh} \, t \]
+
+We can now calculate the time when they meet
+
+\[ s_1 = s_2 \]
+\[ -\frac{1}{2}gt^2 + h = -\frac{1}{2}gt^2 + \sqrt{2gh} \, t \]
+\[ h = \sqrt{2gh} \, t \]
+\[ t = \frac{h}{\sqrt{2gh}} = \sqrt{\frac{h}{2g}} \approx \sqrt{\frac{19.6}{2 \cdot 9.8}} = 1s \]
+
+We can now calculate where the stones will meet
+
+\[ s_1 \left( \sqrt{\frac{h}{2g}} \right) = -\frac{1}{2}g \left( \sqrt{\frac{h}{2g}} \right)^2 + h = -\frac{h}{4} + h = 0.75 h = 14.7m \]
+
+% ===================================================
+
+\section{Particle dynamics}
+\subsection{Motion of blocks on a plane}
+
+\paragraph{Ex 2.6}
+A uniform chain of length $l$ lies on a table. If the coefficient of friction is $\mu$, what is the maximum length of the part of the chain hanging over the table such that the chain does not slide?
+\paragraph{Solution}
+
+In order for the chain not to slide off the table, the force of gravity acting on the part hanging has to be less or equal to the force of friction between the table and the part of the chain laying on it. We denote the length of the chain hanging as $x$.
+
+\[ \frac{x}{l} \, mg \leq \frac{l - x}{l} \, mg \mu \]
+\[ x \leq \mu \left( l - x \right) \]
+\[ x \leq \mu l - \mu x \]
+\[ x + \mu x \leq \mu l \]
+\[ x \left( 1 + \mu \right) \leq \mu l \]
+\[ x \leq \frac{\mu l}{1 + \mu} \]
+
+Therefore we say that the maximum length of the part of the chain hanging over the table $x_{max}$ is ...
+
+\[x_{max} = \frac{\mu l}{1 + \mu}\]
+
+% ===================================================
+
+\paragraph{Ex 2.7}
+A uniform chain of length $l$ and mass $m$ is lying on a smooth table and $\frac{1}{3}$ of its length is hanging vertically down over the edge of the table. Find the work required to pull the hanging part on the table.
+\paragraph{Solution}
+As we pull the chain on the table the minimal force required to pull it by an infinitesimal displacement will be dependant on how long is the part that is hanging. We denote the length of the hanging part as $x$.
+
+\[ F(x) = \frac{xmg}{l} \]
+
+We can now define a differential equation describing change in work
+
+\[ dW = F(x) \, dx \]
+\[ W = \int F(x) \, dx  = \int \frac{xmg}{l} \, dx = \frac{x^{2}mg}{2l} \]
+
+... as well as a work function using a proper integral.
+
+\[ W(x_{1}, x_{2}) = \int_{x_{1}}^{x_{2}} F(x) \, dx = \frac{mg}{2l} \left( x_{2}^{2} - x_{1}^{2} \right) \]
+
+We are interested in the integration range of $\langle 0, \frac{l}{3} \rangle$.
+
+\[ W \left( 0, \frac{l}{3} \right) = \frac{mg}{2l} \cdot \left( \left( \frac{l}{3} \right)^{2} - 0^{2} \right) = \frac{mgl}{18} \]
+
+% ===================================================
+
+\section{Rotational kinematics}
+\subsection{Motion in a horizontal plane}
+
+% ===================================================
+
+\paragraph{Ex 3.1}
+Show that a particle with coordinates ${x = r \cos{t}}$, ${y = r \sin{t}}$ and ${z = t}$ traces a path in time which is helix.
+\paragraph{Solution}
+
+We define a vector function $\vec{v}$ dependant on time parameter t
+\[ \vec{v} = x \hat{i} + y \hat{j} = (r \cos{t}) \hat{i} + (r \sin{t}) \hat{j} \]
+
+For any given time t, the magnitude of vector $\vec{v}$ will be constant:
+\[ |\vec{v}| = \sqrt{(r \cos{t})^{2} + (r \sin{t})^2} = \sqrt{r^2 \cos^2{t} + r^2 \sin^2{t}} = \sqrt{r^2 (\sin^2{t} + \cos^2{t})} = r \]
+
+It has been therefore proven that vector function $\vec{v}$ describes a circle. By making the function yield a third coordinate, we get $\vec{v'}$
+
+\[ \vec{v'} = x \hat{i} + y \hat{j} + z \hat{k} = (r \cos{t}) \hat{i} + (r \sin{t}) \hat{j} + t \hat{k} \]
+
+... and thus create a spiral.
+
+% ===================================================
+
+\paragraph{Ex 3.2}
+A particle of mass \textit{m} is moving in a circular path of constant radius r such that its centripetal acceleration \textit{a} varies with time t as $a = k^2rt^2$, where \textit{k} is a constant. Show that the power delivered to the particle by the forces acting on it is $\frac{mk^4r^2t^5}{3}$.
+\paragraph{Solution}
+
+We can calculate the power delivered to the particle as follows
+
+\[ P = \frac{W}{t} = \frac{Fs}{t} = Fv \]
+
+Using Newton's second law of dynamics, we calculate the centripetal force acting on the particle
+
+\[ a = \frac{F}{m} \Rightarrow F = am  = k^2rt^2m \]
+
+We calculate the particle's velocity
+
+\[ v = \int{dv} = \int{a \, dt} = \int{k^2rt^2 \, dt} = k^2r \int{t^2 \, dt} = \frac{k^2rt^3}{3} + C\]
+
+Finally
+
+\[ P = Fv = k^2rt^2m \cdot \frac{k^2rt^3}{3} = \frac{mk^4r^2t^5}{3} \]
+
+% ===================================================
+
+\paragraph{Ex 3.3}
+A particle is moving in a plane with constant radial velocity or magnitude $\dot{r} = 5 \frac{m}{s}$ and a constant angular velocity of magnitude $\dot{\theta} = 4 \frac{rad}{s}$. Determine the magnitude of the velocity when the particle is 3m from the origin.
+\paragraph{Solution}
+
+The radius is dependant on time
+
+\[ r(t) = \dot{r} t \]
+
+The velocity $v_r$ perpendicular to the radius will be dependant on time
+
+\[ v_r(t) = \omega r(t) = \omega \dot{r} t \]
+
+The magnitude of the particle's velocity $v$ can now be obtained using the Pythagoras theorem
+
+\[ \dot{r}^2 + v_r^2(t) = v^2(t) \]
+
+\[ v(t) = \sqrt{\dot{r}^2 + v_r^2(t)} \]
+
+We substitute $v_r(t) = \omega \dot{r} t$ as well as all known constants and get
+
+\[ v(t) = \sqrt{25 + 400 t^2} \]
+
+The particle will travel the distance of 3m in such time
+
+\[ v = \frac{d}{t} \Rightarrow t = \frac{d}{v} \]
+
+\[ t = 0.6 \]
+
+Finally
+
+\[ v(0.6) \approx 13 \frac{m}{s} \]
+
+% ===================================================
+
+\paragraph{Ex 3.4}
+A point moves along a circle of radius 40 cm  with a constant tangential acceleration of 10 $cm/s^2$. What time is needed after the motion begins for the normal acceleration of the point to be equal to the tangential acceleration?
+\paragraph{Solution}
+
+From the Newton's second law of dynamics we have
+
+\[ F_n = \frac{mv^2}{r} \Rightarrow a_n = \frac{v^2}{r} \]
+
+We substitute $v = a_t \, t$
+
+\[  a_n = \frac{(a_tt)^2}{r} = \frac{a_t^2t^2}{r} \]
+
+We equate the two acceleration terms and find t
+
+\[ \frac{a_t^2t^2}{r} = a_t \]
+
+\[ t = \sqrt{\frac{r}{a_t}} = 2s \]
+
+% ===================================================
+
+\paragraph{Ex 3.5}
+A point moves along a circle of radius 4 cm. The distance $x$ is related to time $t$ by $x = ct^3$, where $c = 0.3 \frac{cm}{s^3}$. Find the normal and tangential acceleration of the point at the instant when its linear velocity is $v = 0.4 \frac{m}{s}$
+\paragraph{Solution}
+
+Normal acceleration:
+
+\[ a_n = \frac{v^2}{r} \]
+
+\[ a_n = 4 \frac{m}{s^2} \]
+
+Tangential acceleration:
+
+We find time needed for the point to achieve the velocity v
+
+\[ v = \frac{dx}{dt} = \frac{d}{dt}(ct^3) = 3ct^2 \]
+
+... and we find t
+
+\[ t = \sqrt{\frac{v}{3c}} \]
+
+We find acceleration achieved at the point in time t
+
+\[ a_t = \frac{d^2x}{dt^2} = \frac{d^2}{dt^2}(ct^3) = 6ct \]
+
+... and we plug in for t
+
+\[ a_t = 6c \cdot \sqrt{\frac{v}{3c}} = \sqrt{12cv} \]
+
+\[ a_t = 0.12 \frac{m}{s^2} \]
+
+% ===================================================
+
+\subsection{Motion in a vertical plane}
+
+% ===================================================
+
+\paragraph{Ex 3.26}
+A particle is placed at the highest point of a smooth sphere of radius R and is given an infinitesimal displacement. At what point will it leave the sphere?
+\paragraph{Solution}
+
+\paragraph{Data}
+\begin{itemize}
+    \item $\alpha$ - angle between vertical direction and the line connecting sphere's center with the point
+    \item $h$ - height at which the point loses contact with the sphere
+\end{itemize}
+
+1. For the point to lose contact with the sphere, the normal force $\vec{N}$ acting on it has to be nullified by the centripetal force $\vec{F_r}$ caused by the fact the point is moving along a circular path.
+
+\[ \vec{N} + \vec{F_r} = \vec{0} \]
+\[ N = F_r \]
+\[ mg \cos{\alpha} = \frac{mv^2}{R} \]
+\[ \cos{\alpha} = \frac{v^2}{gR} \]
+
+2. We calculate the velocity at the time of the point losing contact with the sphere.
+
+a) The lost potential energy will be transformed into kinetic energy
+
+\[ mgR - mgh = \frac{mv^2}{2} \]
+\[ gR - gR \cos{\alpha} = \frac{v^2}{2} \]
+\[ gR(1 - \cos{\alpha}) = \frac{v^2}{2} \]
+\[ v = \sqrt{2gR(1 - \cos{\alpha})} \]
+
+3. We calculate the angle at which the point loses contact with the sphere
+
+\[ \cos{\alpha} = \frac{v^2}{gR} \]
+\[ \cos{\alpha} = \frac{2gR(1 - \cos{\alpha})}{gR} \]
+\[ \cos{\alpha} = 2(1 - \cos{\alpha}) \]
+\[ \cos{\alpha} = \frac{2}{3} \]
+
+4. We calculate the vector $\vec{p}$ signifying the point of losing contact
+
+\[ \vec{p} = R \left( \sin{\alpha} \, \hat{i} + \cos{\alpha} \, \hat{j} \right) = R \left( \sqrt{1 - \cos^2{\alpha}} \, \hat{i} + \cos{\alpha}  \, \hat{j} \right) \]
+
+Finally
+
+\[ \vec{p} = R \left( \sqrt{1 - \left( \frac{2}{3} \right) ^2} \, \hat{i} + \frac{2}{3} \, \hat{j} \right) = R \left( \frac{\sqrt{5}}{3} \, \hat{i} + \frac{2}{3} \, \hat{j} \right) = \frac{R}{3} \left( \sqrt{5} \, \hat{i} + 2 \, \hat{j} \right) \]
+
+% ===================================================
+
+\paragraph{Ex 3.27}
+A small sphere is attached to a fixed point by a string of length 30 cm and whirls round in a vertical circle under the action of gravity at such a speed that the tension in the string when the sphere is at the lowest point is three times the tension when the sphere is at its highest point. Find the speed of a sphere at the highest point.
+\paragraph{Solution}
+
+We find the tension forces at the top ($T_t$) and at the bottom ($T_b$)
+
+\[ \frac{mv_t^2}{r} = mg + T_t \,\,\, \Rightarrow \,\,\, T_t = \frac{mv_t^2}{r} - mg \]
+\[ \frac{mv_b^2}{r} = -mg + T_b \,\,\, \Rightarrow \,\,\, T_b = \frac{mv_b^2}{r} + mg \]
+
+We use the relation between $T_t$ and $T_b$ to form the following equation
+
+\[ 3 \, T_t = T_b \]
+\[ 3 \left( \frac{mv_t^2}{r} - mg \right) = \frac{mv_b^2}{r} + mg \]
+\[ 3 \left( \frac{v_t^2}{r} - g \right) = \frac{v_b^2}{r} + g \]
+
+We have two variables in the equation - $v_t$ and $v_b$. We can find a relation between them using the conservation of energy principle.
+
+\[ mg \Delta h = \frac{mv_b^2}{2} - \frac{mv_t^2}{2} \]
+\[ v_b = \sqrt{v_t^2 + 2g \Delta h} \]
+
+In our case ($\Delta h = 2r$) we get
+
+\[ v_b = \sqrt{v_t^2 + 4gr} \]
+
+We substitute $v_b$ in the tension forces equation and solve for $v_t$
+
+\[ 3 \left( \frac{v_t^2}{r} - g \right) = \frac{\left( \sqrt{v_t^2 + 4gr} \right)^2}{r} + g \]
+\[ v_t = 2 \sqrt{gr} \]
+
+% ===================================================
+
+\section{Rotational dynamics}
+\subsection{Rotational motion}
+
+% ===================================================
+
+\paragraph{Ex 4.12}
+A solid cylinder of mass \textit{m} and radius \textit{R} rolls down an inclined plane of height \textit{h} without slipping. Find the speed of its centre of mass when the cylinder reaches the bottom.
+\paragraph{Solution}
+
+\[ E = E_p + E_{kt} + E_{kr} = m g h + \frac{m v^2}{2} + \frac{I \omega^2}{2} \]
+
+Energy \textit{E\textsubscript{1}} at the top
+\[ E_1 = m g h \]
+
+Energy \textit{E\textsubscript{2}} at the bottom
+\[ E_2 = \frac{m v^2}{2} + \frac{I \omega^2}{2} \]
+
+For a full cylinder of mass \textit{m} and radius \textit{R}:
+\[ I = \frac{m R^2}{2} \]
+\[ \omega = \frac{v}{R} \]
+
+Therefore
+\[ E_2 
+= \frac{m v^2}{2} + \frac{1}{2} \cdot \frac{m R^2}{2} \cdot \left( \frac{v}{R} \right) ^2
+= \frac{3 m v^2}{4} \]
+
+From energy conservation principle
+\[ E_1 = E_2 \]
+\[ m g h = \frac{3 m v^2}{4} \]
+\[ v = \sqrt{\frac{4 g h}{3}} \]
+
+% ===================================================
+
+\paragraph{Ex 4.13}
+A star has initially a radius of $6 \cdot 10^8$ m and a period of rotation about its
+axis of 30 days. Eventually it evolves into a neutron star with a radius of only
+$10^4$ m and a period of 0.1 s. Assuming that the mass has not changed, find the
+ratio of initial and final \textbf{(a)} angular momentum \textbf{(b)} kinetic energy.
+\paragraph{Solution}
+
+\paragraph{Data}
+\begin{itemize}
+    \item R\textsubscript{1} = $6 \cdot 10^8$ m
+    \item R\textsubscript{2} = $10^4$ m
+    \item T\textsubscript{1} = 30 days = $30 \cdot 24 \cdot 60 \cdot 60$ s = 2592000 s
+    \item T\textsubscript{2} = 0.1 s
+\end{itemize}
+
+\paragraph{a)}
+For a sphere, its moment of inertia \textit{I} is
+\[ I = \frac{2 m R^2}{5} \]
+
+... so its angular momentum \textit{L} is
+\[ L = I \omega = \frac{2 m R^2 \omega}{5} \]
+
+Therefore, the ratio of initial and final angular momentum is
+\[ \frac{L_1}{L_2} = 
+\frac{2 m R_1^2 \omega_1}{5} \cdot \frac{5}{2 m R_2^2 \omega_2} =
+\left( \frac{R_1}{R_2} \right)^2 \cdot \frac{\omega_1}{\omega_2} \]
+
+Knowing that
+\[ \omega = \frac{2 \pi}{T} \]
+\[ \frac{\omega_1}{\omega_2} = \frac{2 \pi}{T_1} \cdot \frac{T_2}{2 \pi} = \frac{T_2}{T_1} \]
+
+Finally
+\[ \frac{L_1}{L_2} = \left( \frac{R_1}{R_2} \right)^2 \cdot \frac{T_2}{T_1} \]
+\[ \frac{L_1}{L_2} = \left( \frac{6 \cdot 10^8 m}{10^4 m} \right)^2 \cdot \frac{0.1 s}{2592000 s} = 138.9 \]
+
+\paragraph{b)}
+For a sphere, its kinetic energy is
+\[ E_k = \frac{I \omega^2}{2} = \frac{m R^2 \omega^2}{5} = \frac{4 m R^2 \pi^2 }{5 T^2} \]
+
+Therefore, the ratio of initial and final kinetic energies is
+\[ \frac{E_{k1}}{E_{k2}} = \frac{4 m R_1^2 \pi^2 }{5 T_1^2} \cdot \frac{5 T_2^2}{4 m R_2^2 \pi^2} = \left( \frac{R_1 T_2}{R_2 T_1} \right)^2 \]
+
+Finally
+\[ \frac{E_{k1}}{E_{k2}} = \left(  \frac{6 \cdot 10^8 m \cdot 0.1 s}{10^4 m \cdot 2592000 s} \right)^2 = 5.36 \cdot 10^{-6} \]
+
+% ===================================================
+
+\section{Gravitation}
+\subsection{Field and potential}
+
+% ===================================================
+
+\paragraph{Ex 5.1}
+Calculate the gravitational force between two lead spheres of radius $10 m$ in contact with one another, $G = 6.67 \cdot 10^{-11}$ MKS units. Density of lead is $11300 \frac{kg}{m^3}$.
+\paragraph{Solution}
+
+\paragraph{Data}
+\begin{itemize}
+    \item $r = 10 cm = 0.1 m$
+    \item $\rho = 11300 \frac{kg}{m^3}$ 
+\end{itemize}
+
+The gravitational force between the spheres is given as follows
+
+\[F = \frac{GM_1M_2}{R^2}\]
+
+Since $M_1 = M_2$
+
+\[F = \frac{GM^2}{R^2}\]
+\[M = \rho V = \frac{4 \pi \rho r^3}{3}\]
+\[R = 2r\]
+
+Therefore, F would be expressed as
+
+\[F = \frac{4 G \pi^2 \rho^2 r^4}{9}\]
+
+Now, the force of gravitational pull could be expressed as a function F of sphere density and radius.
+
+\[F(\rho, r) = \frac{4 G \pi^2 \rho^2 r^4}{9}\]
+
+Finally
+
+\[F(11300 \frac{kg}{m^3}, 0.1m) = \frac{4 G \pi^2 (11300 \frac{kg}{m^3})^2 (0.1m)^4}{9} = 3.738 \cdot 10^{-6} N\]
+
+% ===================================================
+
+\paragraph{Ex 5.2}
+Considering Fig. 5.1, what is the magnitude of the net gravitational force exerted on the uniform sphere, of mass 0.010 kg, at point P by the other two uniform spheres, each of mass 0.260 kg, that are fixed at points A and B as shown.
+\paragraph{Solution}
+
+The net force exerted on the sphere P by $n$ other spheres will be
+\[ \vec{F} = \sum_{i=1}^{n} \left( \frac{Gmm_i}{r_i^2} \cdot \frac{\vec{r_i}}{r_i} \right) = Gm \sum_{i=1}^{n} \frac{m_i \vec{r_i}}{r_i^3}  \]
+... where $\vec{r_i}$ is the vector pointing from sphere P to sphere with index $i$.
+
+Knowing all the spheres' positions we can calculate $\vec{r_i}$
+\[ \vec{r_i} = \vec{p_i} - \vec{p} \]
+\[ \vec{F} = Gm \sum_{i=1}^{n} \left( m_i \frac{\vec{p_i} - \vec{p}}{|\vec{p_i} - \vec{p}|^3} \right) \]
+
+In our case:
+\begin{itemize}
+    \item the masses of other spheres are identical ($m'$)
+    \item the distances between sphere P and all the other spheres are identical (d)
+    \item we make the assumption that $\vec{p} = \vec{0}$
+\end{itemize}
+The net force equation simplifies to the following
+\[ \vec{F} = \frac{Gmm'}{d^3} \cdot \sum_{i=1}^{n} \vec{p_i} \]
+
+% ===================================================
+
+\paragraph{Ex 5.3}
+Two bodies of mass \textit{m} and \textit{M} are initially at rest in an inertial reference frame at a great distance apart. They start moving towards each other under gravitational attraction. Show that as they approach a distance \textit{d} apart $(d << r)$, their relative velocity of approach will be $\sqrt{\frac{2G(M + m)}{d}}$, where G is the gravitational constant.
+\paragraph{Solution}
+
+[...]
+
+% ===================================================
+
+\paragraph{Ex 5.4}
+If the Earth suddenly stopped in its orbit assumed to be circular, find the time that would elapse before it falls into the Sun.
+\paragraph{Solution}
+
+[...]
+
+% ===================================================
+
+\section{Oscillations}
+\subsection{Coupled systems of masses and springs}
+
+% ===================================================
+
+\paragraph{Ex 6.41}
+A mass $m$ is connected to two springs of constants $k_{1}$ and $k_{2}$ in parallel. Calculate the effective (equivalent) spring constant.
+\paragraph{Solution}
+
+Both springs act directly on the mass $m$, therefore the force equation for the mass $m$ will take the following form ...
+
+\[ \vec{Q} + \vec{N_{1}} + \vec{N_{2}} = \vec{0} \]
+\[ Q = N_{1} + N_{2} \]
+
+The displacement for the two springs is the same, therefore ...
+
+\[ N_{1} = k_{1}x \]
+\[ N_{2} = k_{2}x \]
+\[ Q = N_{1} + N_{2} = k_{1}x + k_{2}x = x (k_{1} + k_{2}) \]
+
+We can treat the term $k_{1} + k_{2}$ as the effective spring constant $k$.
+
+\[ k = k_{1} + k_{2} \]
+
+% ===================================================
+
+\paragraph{Ex 6.42}
+A mass $m$ is placed on a frictionless horizontal table and is connected to fixed points A and B by two springs of negligible mass and of equal natural length with spring constants $k_{1}$ and $k_{2}$. The mass is displaced along $x$-axis and released. Calculate the period of oscillation.
+\paragraph{Solution}
+
+The net force $\vec{F}$ acting on the mass will be a sum of the two forces coming from springs.
+
+\[ \vec{F} = \vec{N_{1}} + \vec{N_{2}} \]
+
+We can notice that the magnitude of displacement ($x$) will be the same for both springs at any time and that the forces coming from the springs will always have the same direction (while one spring pushes the mass, the other one pulls it). This yields the following equation ...
+
+\[ F = k_{1}x + k_{2}x = x(k_{1} + k_{2}) \]
+
+We can now treat the summation product $k_{1} + k_{2}$ as the effective spring constant $k$ and define the period of oscillation as follows ...
+
+\[ T = 2 \pi \sqrt{\frac{m}{k_{1} + k_{2}}} \]
+
+% ===================================================
+
+\paragraph{Ex 6.49}
+Find the fundamental frequency of vibration of the $HCl$ molecule. The masses of $H$ and $Cl$ may be assumed to be $1.0u$ and $36.6u$. [$1u = 1.66 \cdot 10^{-27} kg$ and $k = 480 \frac{N}{m}$]
+\paragraph{Solution}
+
+We treat the two atoms as a system of two masses $m_{H}$ and $m_{Cl}$ connected by a spring with constant $k$.
+
+[...]
+
+% ===================================================
+
+\end{document}

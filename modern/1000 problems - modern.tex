@@ -1,0 +1,278 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{1000 solved problems in modern physics}
+\author{Aleksander Dobkowski}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Mathematical physics}
+\subsection{Vector calculus}
+
+% ===================================================
+
+\paragraph{Ex 1.1}
+If $\phi=\frac{1}{r}$, where $r = \left( x^2 + y^2 + z^2 \right)^{\frac{1}{2}}$, show that $\nabla \phi = \frac{r}{r^3}$
+\paragraph{Solution}
+
+\[ \phi = \frac{1}{\left( x^2 + y^2 + z^2 \right)^{\frac{1}{2}}} = 
+\left( x^2 + y^2 + z^2 \right)^{-\frac{1}{2}} \]
+
+Where
+\[ x y z \not = 0 \]
+
+\[ \nabla \phi =
+\left( \frac{\partial}{\partial x} \hat{i} + \frac{\partial}{\partial y} \hat{j} + \frac{\partial}{\partial z} \hat{k} \right) \left( x^2 + y^2 + z^2 \right)^{-\frac{1}{2}}\]
+
+Let's calculate the derivative with respect to $x$ using the chain rule ...
+\[ \frac{\partial \phi}{\partial x} = 
+\frac{\partial \phi}{\partial u} \frac{\partial u}{\partial x} \] 
+\[ u = x^2 + y^2 + z^2 \]
+
+\[ \frac{\partial \phi}{\partial x} = 
+\frac{\partial}{\partial u} u^{-\frac{1}{2}} \frac{\partial}{\partial x} \left( x^2 + y^2 + z^2 \right) = \frac{-u^{-\frac{3}{2}}}{2} 2x = 
+-u^{-\frac{3}{2}}x = 
+-\left( x^2 + y^2 + z^2 \right)^{-\frac{3}{2}}x \]
+
+The derivatives with respect to y and z look like
+\[ \frac{\partial \phi}{\partial y} = -\left( x^2 + y^2 + z^2 \right)^{-\frac{3}{2}}y \]
+\[ \frac{\partial \phi}{\partial z} = -\left( x^2 + y^2 + z^2 \right)^{-\frac{3}{2}}z \]
+
+Finally
+\[ \nabla \phi = 
+-\left( x^2 + y^2 + z^2 \right)^{-\frac{3}{2}} x\hat{i} 
+-\left( x^2 + y^2 + z^2 \right)^{-\frac{3}{2}} y\hat{j}
+-\left( x^2 + y^2 + z^2 \right)^{-\frac{3}{2}} z\hat{k}\]
+\[ = -\left( x^2 + y^2 + z^2 \right)^{-\frac{3}{2}} \left( x\hat{i} + y\hat{j} + z\hat{k} \right) \]
+
+% ===================================================
+
+\section{Quantum mechanics I}
+\subsection{de Broglie waves}
+
+% ===================================================
+
+\paragraph{Ex 2.1}
+(a) Write down the equation relating the energy \textit{E} of a photon to its frequency
+\textit{$\nu$}. Hence determine the equation relating the energy \textit{E} of a photon to its
+wavelength. (b) A $\pi^0$ meson at rest decays into two photons of equal energy. What is the
+wavelength (in m) of the photons? (The mass of the $\pi^0$ is 135 $M e V/c^2$)
+\paragraph{Solution}
+
+\paragraph{(a)}
+\begin{itemize}
+    \item \text{Equation relating energy of a photon to its frequency $\nu$}
+        \[ E = h \nu \]
+    \item \text{Equation relating energy of a photon to its wavelength $\lambda$}
+        \[ c = \frac{\lambda}{T} = \lambda \nu \]
+        \[ \nu = \frac{c}{\lambda} \]
+        \[ E = h \nu  = \frac{h c}{\lambda} \]
+\end{itemize}
+
+\paragraph{(b)}
+\paragraph{Data}
+\begin{itemize}
+    \item $m_\pi$ = 135 $M e V/c^2$ = $2.4165 \cdot 10^{-28}$ kg
+\end{itemize}
+
+A decaying meson's energy \textit{$E_\pi$} will be
+\[ E_\pi = m_\pi c^2 \]
+
+The meson decays into 2 photons of equal energy \textit{$E_\gamma$}
+\[ E_\gamma = \frac{E_\pi}{2}\]
+
+Since
+\[ E_\gamma = h \nu  = \frac{h c}{\lambda} \]
+\[ \lambda = 
+\frac{h c}{E_\gamma} = 
+\frac{2 h c}{E_\pi} = 
+\frac{2 h c}{m_\pi c^2} = 
+\frac{2 h}{m_\pi c} \]
+
+Finally
+\[ \lambda = \frac{2 \cdot 6.626 \cdot 10^{-34} J s}{2.4165 \cdot 10^{-28} kg \cdot 299792458 \frac{m}{s}} = 1.83 \cdot 10^{-14} m \]
+
+% ===================================================
+
+\paragraph{Ex 2.2}
+Calculate the wavelength in \textit{nm} of an electron which has been accelerated from rest through a potential difference of 54 V.
+\paragraph{Solution}
+
+\paragraph{Data}
+\begin{itemize}
+    \item $V = 54$ V 
+\end{itemize}
+
+Having passed through the potential $V$, each electron will gain the energy of 54 electron-volts, which expressed in Joules gives the energy
+
+\[\Delta E = e V\]
+
+Since the electron has been accelerated from the state of rest, the increase in its energy will be its total energy E.
+
+\[E = \Delta E\]
+
+From the equation
+
+\[\lambda = \frac{h}{p}\]
+
+... the wavelength can be calculated having found the momentum of the electron.\\
+
+The work done accelerating the electron will be equal to the electron's kinetic energy after it passes through the potential difference.
+
+\[e V = \frac{mv^2}{2}\]
+
+... and multiplying the right side by $\frac{m}{m}$
+
+\[e V = \frac{m^2v^2}{2m}\]
+\[e V = \frac{p^2}{2m}\]
+\[p = \sqrt{2 m e V}\]
+
+Now, the wavelength of the electron can be described as a function $\lambda$ of the potential through which it passed
+
+\[\lambda (V) = \frac{h}{\sqrt{2 m e V}}\]
+
+Finally
+
+\[\lambda (54V) = \frac{6.626 \cdot 10^{-34} Js}{\sqrt{2 \cdot 9.109 \cdot 10^{-31} kg \cdot 1.602 \cdot 10^{-19} C \cdot 54V}} = 0.1669 nm\]
+
+% ===================================================
+
+\paragraph{Ex 2.3}
+Show that de Broglie wavelength for neutrons is given by $\lambda = 0.286 \AA / \sqrt{E}$, where E is in electron-volts.
+\paragraph{Solution}
+
+From exercise 2.2 we know that
+
+\[\lambda = \frac{h}{\sqrt{2 m E_{J}}}\]
+
+Accounting for the fact that the energy E is expressed in electron-volts and the equation above expects energy expressed in Joules, we convert the energy E  from eV to Joules.
+
+\[\lambda = \frac{h}{\sqrt{2 m E_{J}}} =  \frac{h}{\sqrt{3.204 \cdot 10^{-19} \cdot m E}}\]
+
+Having gathered all the constants in one constant k.
+
+\[\lambda = \frac{h}{\sqrt{3.204 \cdot 10^{-19} \cdot m}} \cdot \frac{1}{\sqrt{E}} = \frac{k}{\sqrt{E}}\]
+
+\[k = 2.86 \cdot 10^{-11} = 0.286 \AA\]
+
+Finally
+
+\[\lambda = \frac{0.286 \AA}{\sqrt{E}}\]
+
+% ===================================================
+
+\paragraph{Ex 2.4}
+Show that if an electron is accelerated through V volts then de Broglie wavelength in angstroms is given by $\lambda = \sqrt{\frac{150}{V}}$
+\paragraph{Solution}
+
+From exercise 2.2 we know that
+
+\[\lambda = \frac{h}{\sqrt{2 m e V}}\]
+
+Having gathered all the constants in one constant k.
+
+\[\lambda = \frac{h}{\sqrt{2 m e}} \cdot \frac{1}{\sqrt{V}} = \frac{k}{\sqrt{V}}\]
+
+\[k = 1.236 \cdot 10^{-9} = 12.36 \AA \approx \sqrt{150} \AA\]
+
+Finally
+
+\[\lambda \approx \sqrt{\frac{150}{V}} \AA\]
+
+% ===================================================
+
+\paragraph{Ex 2.5}
+(1) A thermal neutron has a speed $v$ at temperature $T = 300K$ and kinetic energy $\frac{m_{n}v^2}{2} = \frac{3kT}{2}$. (a) Calculate its de Broglie wavelength. (b) State whether a beam of these neutrons could be diffracted by a crystal, and why?\\(2) Use Heisenberg's Uncertainty principle to estimate the kinetic energy (in $MeV$) of a nucleon bound within a nucleus of radius $10^{-15}$ m.
+\paragraph{Solution}
+
+\paragraph{1}
+
+\paragraph{(a)}
+
+\[\frac{m_n v^2}{2} = \frac{3kT}{2}\]
+
+\[v = \sqrt{\frac{3kT}{m_n}}\]
+
+De Broglie wavelength is described as
+
+\[\lambda = \frac{h}{p} = \frac{h}{m_{n}v}\]
+
+... we substitute $v$ and get
+
+\[\lambda = \frac{h}{\sqrt{3km_{n}T}}\]
+
+Now the wavelength can be described as a function $\lambda$ of the temperature.
+
+\[\lambda(T) = \frac{h}{\sqrt{3km_{n}T}}\]
+
+Finally
+
+\[\lambda(300K) = \frac{6.626 \cdot 10^{-34} Js}{\sqrt{3 \cdot 1.381 \cdot 10^{-23} m^{2}kgs^{-2}K^{-1} \cdot 1.675 \cdot 10^{-27} kg \cdot 300K}} = 1.452 \AA\]
+
+\paragraph{(b)}
+
+Given that the de Broglie wavelength $\lambda$ is similar to the distance between atoms in crystal $d$.
+
+\[\lambda \approx d\]
+
+\paragraph{2}
+
+Heisenberg's Uncertainty principle states that
+
+\[\Delta x \Delta p \gtrsim \hbar\]
+
+\[ \Delta p \gtrsim \frac{\hbar}{\Delta x} \]
+
+We assume that we make the most precise measurement possible. Therefore the inequality becomes an equation and we skip the $\Delta$ notation.
+
+\[ p = \frac{\hbar}{x} \]
+
+The total energy of the particle is formulated as follows
+
+\[ E^2 = p^2c^2 + m^2c^4 \Rightarrow E = \sqrt{p^2c^2 + m^2c^4} \]
+
+We also know that  the total energy of a particle is the sum of its rest energy and kinetic energy.
+
+\[ E = mc^2 + E_k \] 
+\[ E_k = E - mc^2 = \sqrt{p^2c^2 + m^2c^4} - mc^2 = \sqrt{\left( \frac{\hbar c}{x} \right)^2 + m^2c^4} - mc^2 \]
+
+Now the kinetic energy of the particle can be expressed as a function $E_k$ of the particle's mass $m$ and the nucleus radius $x$.
+
+\[ E_k(m, x) = \sqrt{\left( \frac{\hbar c}{x} \right)^2 + m^2c^4} - mc^2 \]
+
+% ===================================================
+
+\paragraph{Ex 2.6}
+The relation for total energy ($E$) and momentum ($p$) for a relativistic particle is $E^2 = p^2c^2 + m^2c^4$, where $m$ is the rest mass and $c$ is the velocity of light. Using the relativistic relations $E = \hbar \omega$ and $p = \hbar k$, where $\omega$ is the angular frequency and $k$ is the wave number, show that the product of group velocity ($v_g$) and the phase velocity ($v_p$) is equal to $c^2$, that is $v_g v_p = c^2$.
+\paragraph{Solution}
+
+We substitute $E$ and $p$ in the equation and get
+\[ \hbar^2 \omega^2 = \hbar^2 k^2 c^2 + m^2 c^4 \]
+
+We calculate $\omega$ from the above equation
+\[ \omega = \left( k^2 c^2 + m^2 c^4 \hbar^{-2}  \right)^{\frac{1}{2}} \] 
+
+We now can calculate the group and phase velocities
+
+1. Group velocity
+\[ v_g = \frac{\partial \omega}{\partial k} = \frac{\partial}{\partial k} \left( k^2 c^2 + m^2 c^4 \hbar^{-2} \right)^{\frac{1}{2}} = \]
+\[ = \frac{1}{2} \left( k^2 c^2 + m^2 c^4 \hbar^{-2} \right)^{-\frac{1}{2}} \, \frac{\partial}{\partial k} \left( k^2 c^2 + m^2 c^4 \hbar^{-2} \right) = \]
+\[ = \frac{1}{2} \left( k^2 c^2 + m^2 c^4 \hbar^{-2} \right)^{-\frac{1}{2}} \cdot 2kc^2 = kc^2 \left( k^2 c^2 + m^2 c^4 \hbar^{-2} \right)^{-\frac{1}{2}} \]
+
+2. Phase velocity
+\[ v_p = \frac{\omega}{k} = \frac{\left( k^2 c^2 + m^2 c^4 \hbar^{-2} \right)^{\frac{1}{2}}}{k} \]
+
+We can now calculate the value of the expression $v_g v_p$
+
+\[ v_g v_p = kc^2 \left( k^2 c^2 + m^2 c^4 \hbar^{-2} \right)^{-\frac{1}{2}} \cdot \frac{\left( k^2 c^2 + m^2 c^4 \hbar^{-2} \right)^{\frac{1}{2}}}{k} = c^2 \]
+
+% ===================================================
+
+
+% ===================================================
+
+\end{document}
